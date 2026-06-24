@@ -1,0 +1,32 @@
+create database task4;
+use task4;
+create table department(id int primary key,name varchar(20),address char(30));
+desc department;
+insert into department values(1,"tirumal","hyderbad"),(2,"vinod","erraram"),(3,"vamshi","lbnagar");
+select * from department;
+create table employee(empid int,emp_name  varchar(20),designation varchar(30),salary bigint,mobile bigint);
+desc employee;
+alter table employee modify column salary decimal(10,5);
+alter table employee rename column mobile to mobil_no;
+alter table employee add foreign key employee(empid)references department(id); 
+desc employee;
+alter table employee modify column emp_name varchar(20) not null;
+desc employee;
+alter table employee add constraint  unique_mobile_no unique(mobil_no);
+desc employee;
+alter table employee rename to emp_id;
+insert into emp_id values(1,"tirumal","hr",10000,9088776),(2,"ravi","cleaner",99887,8390303),(3,"veni","emp",3737,38376666);
+select * from emp_id;
+select *,salary+5000 from emp_id where empid=2;
+select *,salary+salary*0.1 as increased_salary from emp_id;
+insert into  emp_id values(4,"sneha","ceo",39399,33933838);
+delete from emp_id where salary<4000;
+select* from emp_id;
+truncate table emp_id;
+select * from emp_id;
+drop table emp_id;
+drop table department;
+
+
+
+
