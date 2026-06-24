@@ -1,3 +1,4 @@
+#task on DDL and DML commands
 create database task4;
 use task4;
 create table department(id int primary key,name varchar(20),address char(30));
